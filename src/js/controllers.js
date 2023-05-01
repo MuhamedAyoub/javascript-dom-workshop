@@ -1,15 +1,12 @@
 export const createRowTable = (options) => {
   const createRowElement = (row, data) => {
-    const element = document.createElement("td");
-    element.textContent = data;
+    // TODO COMPLETE ... 
     row?.appendChild(element);
   };
   const { index, name, email, phone } = options;
-  const row = document.createElement("tr");
+  // const row = document.createElement(???);
   createRowElement(row, index);
-  createRowElement(row, name);
-  createRowElement(row, email);
-  createRowElement(row, phone);
+// TODO COMPLETE
   return row;
 };
 
@@ -21,15 +18,14 @@ export const createRowTable = (options) => {
       type !== "Delete" ? "btn-primary" : "btn-danger",
       "me-2"
     );
-    newButton.addEventListener("click", () => cb(cbParams));
+    // TODO Complete Event
+    
     return newButton;
   };
   
 
 
   export const searchContact = (contactList,value) => {
-    return contactList.filter((contact) => {
-      return contact.name.toLowerCase().includes(value) || contact.email.toLowerCase().includes(value) || contact.phone.toLowerCase().includes(value)
-      
-    });
+    // condition  contact.name.toLowerCase().includes(value) || contact.email.toLowerCase().includes(value) || contact.phone.toLowerCase().includes(value)
+    //TODO  Complete  
   }
