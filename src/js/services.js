@@ -9,69 +9,54 @@ export class ContactManager {
       this.currentlyEditingIndex = null;
     }
   
-    addContact(name, email, phone) {
-      // TODO complete ..
-      this.displayContacts();
-    }
+    addContact(name, email, phone)   
+      // use Contact;
+      // use displayContacts();
+    
   
-    updateContact(index, name, email, phone) {
-        try {
-            //TODO update code ..
-            this.displayContacts();
-        } catch(e) {
-            alert(e)
-        }
-    }
-  
-    deleteContact = (index) =>  {
-        //TODO delete code ..
-    //   this.displayContacts();
-    }
-  
-    displayContacts(filteredContacts = null) {
+    updateContact(index, name, email, phone) 
         
-        const  contactList = document.querySelector("#contactList tbody");
-        contactList.innerHTML = "";
+            // use displayContacts();
+  
+    deleteContact = (index) => {
+        //displayContacts();
+        
+    }
+    
+  
+    displayContacts(filteredContacts = null) 
+        // const  contactList 
+        // innerHTML to null ... 
         // const contactsToDisplay = 
-        // use createRowTable function
+        // use createRowTable , createBtn
+        // const actionCell
         /*
        TODO Complete  ...
         */ 
   
       
-    }
+    
   
     openUpdateModal = (index) => {
         /*
       TODO  Complete ...
         
-        */
-        // NODES.UPDATE_MODEL.classList.add("show");
-        // NODES.UPDATE_MODEL.style.display = "block";
-        // document.body.classList.add("modal-open");
-      }
-      closeUpdateModal() {
-        NODES.UPDATE_MODEL.classList.remove("show");
-        NODES.UPDATE_MODEL.style.display = "none";
-        document.body.classList.remove("modal-open");
-      }
+         NODES.UPDATE_MODEL
+        // class show to display ..
+         document.body.classList.add("modal-open");
+      */
+        }
+      closeUpdateModal() 
+        
       
       updateContactFromModal() {
         try {
             // TODO Complete
-            if (updatedName === "" || updatedEmail === "" || updatedPhone === "") {
-                throw  new Error(ALERT_MESSAGE);
+                // throw  new Error(ALERT_MESSAGE);            
+                     
+            // use updateContact(
                 
-            }
-            
-            // this.updateContact(
-                //   this.currentlyEditingIndex,
-                //   updatedName,
-                //   updatedEmail,
-                //   updatedPhone
-                // );
-                
-                // this.closeUpdateModal();
+                 // use closeUpdateModal();
             }catch(e) {
                 alert(e)
             }
