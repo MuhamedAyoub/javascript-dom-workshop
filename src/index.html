@@ -1,119 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bootstrap w/ Vite</title>
+		<script type="module" src="./js/main.js"></script>
+	</head>
+	<body class="p-6">
+		<div class="container">
+			<div class="container">
+				<h1 class="text-center h1 m-4 text-primary">Contact Manager</h1>
+				<form class="w-50 m-auto" id="addContactForm">
+					<div class="form-group">
+						<label for="nameInput">Name</label>
+						<input class="form-control" id="nameInput" required type="text" />
+					</div>
+					<div class="form-group">
+						<label for="emailInput">Email</label>
+						<input class="form-control" id="emailInput" required type="email" />
+					</div>
+					<div class="form-group">
+						<label for="phoneInput">Phone</label>
+						<input class="form-control" id="phoneInput" required type="tel" />
+					</div>
+					<button class="btn btn-primary mt-3" type="submit">
+						Add Contact
+					</button>
+				</form>
+				<div class="m-4 mt-8 container">
+					<form class="mt-4" id="searchForm">
+						<label class="h5 text-secondary w-25" for="searchInput"
+							>Search Contacts</label
+						>
+						<input
+							class="form-control my-2 w-25"
+							id="searchInput"
+							onfocus=" console.log(' you are focusing ')"
+							placeholder="Search..."
+							type="text" />
+						<input class="d-none" type="submit" />
+					</form>
+					<div>
+						<table class="mt-4 table table-striped" id="contactList">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Phone</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap w/ Vite</title>
-  <script type="module" src="./js/main.js"></script>
-</head>
-
-<body>
-
-
-
-  <body class="p-6" >
-    <div class="container">
-      <div class="container">
-        <h1 class="text-center h1 m-4 text-primary " >Contact Manager</h1>
-
-        <form id="addContactForm" class="w-50 m-auto" >
-          <div class="form-group">
-            <label for="nameInput">Name</label>
-            <input type="text" id="nameInput" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="emailInput">Email</label>
-            <input type="email" id="emailInput" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="phoneInput">Phone</label>
-            <input type="tel" id="phoneInput" class="form-control" required>
-          </div>
-          <button type="submit" class="btn btn-primary mt-3 ">Add Contact</button>
-        </form>
-        <div class="m-4 mt-8 container" >
-          <form class="mt-4" id="searchForm" >
-            <label for="searchInput" class="h5 text-secondary w-25" >Search Contacts</label>
-            <input onfocus=" console.log(' you are focusing ')" type="text" id="searchInput" class="form-control my-2 w-25" placeholder="Search...">
-            <input  type="submit" class="d-none" >
-          </form>
-          <div>
-
-            <table id="contactList" class="mt-4 table table-striped ">
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    0
-              </td>
-              <td>
-                Mohamed
-              </td>
-              <td>
-                mohamed@gmail
-              </td>
-              <td>
-                01000000000
-              </td>
-              <td>
-                <button class="btn btn-primary m-2">
-                  Update
-                </button>
-                <button class="btn btn-danger m-2">
-                  Delete
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-    </div>
-    
-    <!-- Update Contact Modal -->
-    <div class="modal fade" id="updateContactModal" tabindex="-1" role="dialog"
-    aria-labelledby="updateContactModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="updateContactModalLabel">Update Contact</h5>
-              <button type="button" class="close closeBtn "  data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="updateForm">
-                <div class="form-group">
-                  <label for="updateName">Name</label>
-                  <input type="text" id="updateName" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="updateEmail">Email</label>
-                  <input type="email" id="updateEmail" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label for="updatePhone">Phone</label>
-                  <input type="tel" id="updatePhone" class="form-control" required>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary closeBtn " data-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary"  id="updateContactButton">Update Contact</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  </body>
-
+			<!-- Update Contact Modal -->
+			<div
+				aria-hidden="true"
+				aria-labelledby="updateContactModalLabel"
+				class="modal fade"
+				id="updateContactModal"
+				role="dialog"
+				tabindex="-1">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="updateContactModalLabel">
+								Update Contact
+							</h5>
+							<button
+								aria-label="Close"
+								class="close closeBtn"
+								data-dismiss="modal"
+								type="button">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form id="updateForm">
+								<div class="form-group">
+									<label for="updateName">Name</label>
+									<input
+										class="form-control"
+										id="updateName"
+										required
+										type="text" />
+								</div>
+								<div class="form-group">
+									<label for="updateEmail">Email</label>
+									<input
+										class="form-control"
+										id="updateEmail"
+										required
+										type="email" />
+								</div>
+								<div class="form-group">
+									<label for="updatePhone">Phone</label>
+									<input
+										class="form-control"
+										id="updatePhone"
+										required
+										type="tel" />
+								</div>
+								<div class="modal-footer">
+									<button
+										class="btn btn-secondary closeBtn"
+										data-dismiss="modal"
+										type="button">
+										Cancel
+									</button>
+									<button
+										class="btn btn-primary"
+										id="updateContactButton"
+										type="submit">
+										Update Contact
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
